@@ -1,18 +1,13 @@
-// Define the notificationSystem module
 const notificationSystem = (() => {
-    // Encapsulated list of observers
     let observers = [];
   
     return {
-      // Add observer to the list
       subscribe(observer) {
         observers.push(observer);
       },
-      // Remove observer from the list
       unsubscribe(observer) {
         observers = observers.filter((obs) => obs !== observer);
       },
-      // Notify all observers with data
       notify(data) {
         observers.forEach((observer) => observer.update(data));
       },
